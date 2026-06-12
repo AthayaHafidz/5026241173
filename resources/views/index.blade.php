@@ -3,16 +3,18 @@
 @section('title', 'Data Pegawai')
 
 @section('konten')
-    <center>
-        <br />
-        <br />
+<br/>
+<br/>
+ <a href="/pegawaitambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+<br/>
+<br/>
     <p>Cari Data Pegawai :</p>
-	<form action="/pegawaicari" method="GET">
+    	<form action="/pegawaicari" method="GET">
 		<input type="text" name="cari" placeholder="Cari Pegawai .." class="form-control">
         <br />
 		<input type="submit" value="CARI" class="btn btn-secondary">
 	</form>
-
+    <center>
 	<br/>
         <table class="table table-striped table-hover">
             <tr>
@@ -38,7 +40,7 @@
         </table>
         <ul class="pagination" style="margin:20px 0">
         {{ $pegawai->links() }}</ul>
-        <a href="/pegawaitambah" class="btn btn-primary"> + Tambah Pegawai Baru</a>
+
 
     </center>
 
