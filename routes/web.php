@@ -9,6 +9,8 @@ use App\Http\Controllers\KeranjangBelanjaController ;
 use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\BluerayController;
+use App\Http\Controllers\MypegawaiController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -96,3 +98,10 @@ Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.upda
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
 
 Route::resource('blueray', BluerayController::class);
+
+//CRUD mypegawai
+Route::get('/eas', [MypegawaiController::class, 'index'])->name('eas');
+Route::get('/eas/tambah', [MypegawaiController::class, 'create'])->name('eas.tambah');
+Route::post('/eas/tambah', [MypegawaiController::class, 'store'])->name('eas.store');
+Route::get('/eas/view/{kodepegawai}', [MypegawaiController::class, 'show'])->name('eas.view');
+
